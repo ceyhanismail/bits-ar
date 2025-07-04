@@ -1,0 +1,38 @@
+﻿<!DO<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>BITS Perceptual-Shift AR</title>
+
+  <!-- Load Google’s <model-viewer> web component -->
+  <script type="module"
+          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <!-- Mobile-friendly viewport & zero margins -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html, body { margin: 0; height: 100%; }
+    #ar-container { height: 100%; width: 100%; }
+  </style>
+</head>
+
+<body>
+  <!-- Replace “bits.glb / bits.usdz” with your filenames if different -->
+  <model-viewer id="ar-container"
+                src="bits.glb"
+                ios-src="bits.usdz"
+                ar
+                ar-modes="scene-viewer quick-look webxr"
+                camera-controls
+                auto-rotate
+                rotation-per-second="15deg"
+                poster="poster.jpg"   <!-- optional loading placeholder -->
+                alt="3-D perceptual-shift BITS logo">
+      <!-- Fallback message for unsupported browsers -->
+      <p style="font-family:sans-serif; text-align:center;">
+        Your browser doesn’t support immersive AR.<br>
+        Please open this page on a recent mobile device.
+      </p>
+  </model-viewer>
+</body>
+</html>
